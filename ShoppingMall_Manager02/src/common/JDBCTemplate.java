@@ -38,4 +38,14 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	public static void rollback(Connection con) {
+		try {
+			con.rollback();
+		} catch (SQLException e) {
+
+			System.out.println("[Error] rollback 에러");
+			e.printStackTrace();
+		}
+	}
+	
 }
