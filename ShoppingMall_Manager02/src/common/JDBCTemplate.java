@@ -48,4 +48,16 @@ public class JDBCTemplate {
 		}
 	}
 	
+	public static void close(Connection con) {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("[Error] connection close error");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
 }
