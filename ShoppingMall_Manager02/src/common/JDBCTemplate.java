@@ -2,6 +2,7 @@ package common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -63,6 +64,14 @@ public class JDBCTemplate {
 			stmt.close();
 		} catch (SQLException e) {
 			System.out.println("[Error] statement close error");
+			e.printStackTrace();
+		}
+	}
+	public static void close(ResultSet rs) {
+		try {
+			rs.close();
+		} catch (SQLException e) {
+			System.out.println("[Error] resultset close error");
 			e.printStackTrace();
 		}
 	}
