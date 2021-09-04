@@ -3,6 +3,7 @@ package common;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class JDBCTemplate {
 	public static Connection getConnection() {
@@ -57,6 +58,14 @@ public class JDBCTemplate {
 		}
 	}
 	
+	public static void close(Statement stmt) {
+		try {
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println("[Error] statement close error");
+			e.printStackTrace();
+		}
+	}
 	
 	
 	
